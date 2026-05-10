@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What The Truck INC — DOT# 4543858 | Tracy, CA</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --charcoal: #1a1a1a;
+    --steel: #2c2c2c;
+    --yellow: #f5c200;
+    --yellow-dark: #c49a00;
+    --white: #f5f5f0;
+    --gray: #888;
+    --light-gray: #e0ddd6;
+    --red: #d63031;
+    --green: #00b894;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--yellow);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .nav-logo span { color: var(--white); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--yellow); }
+
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--black) !important;
+    padding: 0.5rem 1.2rem;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--yellow-dark) !important; color: var(--black) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 3rem 4rem 4rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--green);
+    color: var(--black);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--black);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title .accent { color: var(--yellow); }
+  .hero-title .block-text {
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 0.9rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 2px solid var(--steel);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); transform: translateY(-2px); }
+
+  .hero-right {
+    position: relative;
+    background: var(--charcoal);
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(245,194,0,0.03) 30px,
+        rgba(245,194,0,0.03) 31px
+      );
+  }
+
+  .hero-graphic {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .truck-icon {
+    font-size: 8rem;
+    filter: drop-shadow(0 0 30px rgba(245,194,0,0.3));
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .dot-display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  .dot-display strong { color: var(--yellow); }
+
+  /* diagonal divider */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 80px;
+    background: var(--black);
+    transform: skewX(-3deg);
+    z-index: 1;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--yellow);
+    padding: 1.2rem 4rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--black);
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(0,0,0,0.2);
+    align-self: stretch;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 5rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── OVERVIEW ── */
+  .overview {
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .overview-text p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--steel);
+    border: 1px solid var(--steel);
+  }
+
+  .info-cell {
+    background: var(--charcoal);
+    padding: 1.2rem 1.5rem;
+  }
+  .info-cell-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.35rem;
+  }
+  .info-cell-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .info-cell-value.green { color: var(--green); }
+  .info-cell-value.yellow { color: var(--yellow); }
+
+  /* ── EQUIPMENT ── */
+  .equipment-section {
+    background: var(--black);
+  }
+
+  .equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .equip-card {
+    background: var(--charcoal);
+    border: 1px solid var(--steel);
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .equip-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .equip-card:hover { border-color: var(--yellow); transform: translateY(-4px); }
+  .equip-card:hover::before { transform: scaleX(1); }
+
+  .equip-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .equip-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .equip-desc {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── CARGO / OPS ── */
+  .ops-section {
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .cargo-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .cargo-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--black);
+    border-left: 3px solid var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .ops-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .ops-tag {
+    border: 1.5px solid var(--steel);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  /* ── FLEET ── */
+  .fleet-section {
+    background: var(--black);
+  }
+
+  .fleet-table-wrap {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead tr {
+    background: var(--yellow);
+    color: var(--black);
+  }
+  th {
+    padding: 0.9rem 1.5rem;
+    text-align: left;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--steel);
+    font-size: 0.95rem;
+    color: var(--light-gray);
+  }
+  tbody tr:hover { background: var(--charcoal); }
+
+  /* ── AUTHORITY ── */
+  .authority-section {
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .auth-card {
+    background: var(--black);
+    border: 1px solid var(--steel);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .auth-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--steel);
+  }
+  .auth-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .auth-key {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .auth-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: right;
+  }
+  .badge-active {
+    background: var(--green);
+    color: var(--black);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.6rem;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-card {
+    background: var(--charcoal);
+    border: 1px solid var(--steel);
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .contact-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .contact-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.25rem;
+  }
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .contact-value a {
+    color: var(--yellow);
+    text-decoration: none;
+  }
+  .contact-value a:hover { text-decoration: underline; }
+
+  .map-placeholder {
+    background: var(--charcoal);
+    border: 1px solid var(--steel);
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  .map-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(245,194,0,0.05) 39px, rgba(245,194,0,0.05) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(245,194,0,0.05) 39px, rgba(245,194,0,0.05) 40px);
+  }
+  .map-pin { font-size: 3rem; }
+  .map-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: center;
+    position: relative;
+  }
+  .map-link {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .map-link:hover { background: var(--yellow-dark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 2px solid var(--yellow);
+    padding: 3rem 4rem 2rem;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--steel);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--yellow);
+    letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--white); }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.3rem;
+  }
+
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: right;
+    font-size: 0.82rem;
+    color: var(--gray);
+  }
+  .footer-meta strong { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--gray);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .fmcsa-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .fmcsa-links a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .fmcsa-links a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero::after { display: none; }
+    .hero-left { padding: 7rem 1.5rem 3rem; }
+    .hero-right { min-height: 280px; }
+    section { padding: 3.5rem 1.5rem; }
+    .overview, .ops-section, .authority-section, .contact-section { grid-template-columns: 1fr; gap: 2rem; }
+    .equipment-grid { grid-template-columns: 1fr; }
+    .stats-bar { padding: 1.2rem 1.5rem; gap: 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+    .footer-top { flex-direction: column; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">WHAT THE<span> TRUCK</span></div>
+  <ul class="nav-links">
+    <li><a href="#overview">About</a></li>
+    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="#fleet">Fleet</a></li>
+    <li><a href="#authority">Authority</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge">Active Authority</div>
+    <h1 class="hero-title">
+      <span class="block-text accent">WHAT THE</span>
+      <span class="block-text">TRUCK INC</span>
+    </h1>
+    <p class="hero-sub">
+      Licensed carrier & broker based in Tracy, CA. Authorized for both interstate and intrastate operations — moving general freight across California and beyond.
+    </p>
+    <div class="hero-buttons">
+      <a href="mailto:WHATTHETRUCKINC@GMAIL.COM" class="btn-primary">Get In Touch</a>
+      <a href="tel:5103661660" class="btn-secondary">📞 (510) 366-1660</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-graphic">
+      <div class="truck-icon">🚚</div>
+      <div class="dot-display">DOT# <strong>4543858</strong></div>
+      <div class="dot-display">TRACY, CA &nbsp;|&nbsp; Est. <strong>2026</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Power<br>Units</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Licensed<br>Drivers</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Equipment<br>Types</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Months<br>Active</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview" id="overview">
+  <div class="overview-text">
+    <div class="section-label">Company Overview</div>
+    <h2 class="section-title">WHO WE ARE</h2>
+    <p>
+      WHAT THE TRUCK INC is an active carrier & broker registered with the FMCSA since March 2026. Based in Tracy, CA, we're classified for both interstate and intrastate operations, with the ability to operate beyond 100 miles intrastate.
+    </p>
+    <p>
+      We specialize in Box Truck, Dry Van, and Hotshot freight — keeping goods moving efficiently throughout California and beyond. Our team is small but professional, built on reliability and straightforward service.
+    </p>
+    <p style="color: #666; font-size:0.85rem; margin-top:1.5rem;">
+      Officer: <strong style="color: #aaa;">SYED SIDDIQUE SHAHID</strong>
+    </p>
+  </div>
+
+  <div>
+    <div class="section-label">Quick Facts</div>
+    <h2 class="section-title" style="font-size:2rem;">AT A GLANCE</h2>
+    <div class="info-grid">
+      <div class="info-cell">
+        <div class="info-cell-label">DOT Number</div>
+        <div class="info-cell-value yellow">4543858</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Status</div>
+        <div class="info-cell-value green">Active ✓</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Carrier Type</div>
+        <div class="info-cell-value">Both Interstate & Intrastate</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Authority Since</div>
+        <div class="info-cell-value">March 4, 2026</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Hazmat</div>
+        <div class="info-cell-value">No</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Passenger</div>
+        <div class="info-cell-value">No</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">Safety Rating</div>
+        <div class="info-cell-value" style="color:#aaa;">Not Rated</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">County</div>
+        <div class="info-cell-value">077</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section class="equipment-section" id="equipment">
+  <div class="section-label">What We Run</div>
+  <h2 class="section-title">EQUIPMENT</h2>
+  <div class="equipment-grid">
+    <div class="equip-card">
+      <div class="equip-icon">📦</div>
+      <div class="equip-name">Box Truck</div>
+      <p class="equip-desc">Enclosed cargo space ideal for local and regional deliveries, furniture, appliances, and palletized freight. Efficient and versatile.</p>
+    </div>
+    <div class="equip-card">
+      <div class="equip-icon">🚛</div>
+      <div class="equip-name">Dry Van</div>
+      <p class="equip-desc">Standard enclosed trailer for general freight. Protected from the elements, suitable for a wide range of non-perishable cargo types.</p>
+    </div>
+    <div class="equip-card">
+      <div class="equip-icon">⚡</div>
+      <div class="equip-name">Hotshot</div>
+      <p class="equip-desc">Time-sensitive, expedited freight delivery using medium-duty trucks and gooseneck trailers. Fast turnaround for urgent loads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARGO & OPS -->
+<section class="ops-section" id="cargo">
+  <div>
+    <div class="section-label">Authorized Cargo</div>
+    <h2 class="section-title">WHAT WE HAUL</h2>
+    <ul class="cargo-list">
+      <li>📋 General Freight</li>
+    </ul>
+    <p style="color:var(--gray); font-size:0.85rem; margin-top:1.5rem; line-height:1.7;">
+      Authorized by the FMCSA to transport general freight. No hazardous materials. No passenger transport.
+    </p>
+  </div>
+  <div>
+    <div class="section-label">Operations Scope</div>
+    <h2 class="section-title">WHERE WE RUN</h2>
+    <div class="ops-tags">
+      <div class="ops-tag">Interstate</div>
+      <div class="ops-tag">Intrastate</div>
+      <div class="ops-tag">Beyond 100 Miles</div>
+      <div class="ops-tag">California Base</div>
+    </div>
+    <p style="color:var(--gray); font-size:0.9rem; margin-top:1.5rem; line-height:1.7;">
+      Authorized for both interstate and intrastate operations. We operate intrastate beyond the 100-mile radius, covering wide service areas across and outside California from our Tracy, CA base.
+    </p>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet-section" id="fleet">
+  <div class="section-label">Fleet Breakdown</div>
+  <h2 class="section-title">OUR FLEET</h2>
+  <div class="fleet-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Equipment</th>
+          <th>Owned</th>
+          <th>Term Leased</th>
+          <th>Trip Leased</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Trucks</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td><strong style="color:var(--yellow)">1</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--gray); font-size:0.85rem; margin-top:1rem;">
+    Fleet Size Classification: <strong style="color:var(--white)">1 Truck</strong> &nbsp;|&nbsp; Intrastate Drivers: <strong style="color:var(--white)">1</strong>
+  </p>
+</section>
+
+<!-- AUTHORITY -->
+<section class="authority-section" id="authority">
+  <div>
+    <div class="section-label">Licensing & Registration</div>
+    <h2 class="section-title">AUTHORITY</h2>
+    <div class="auth-card">
+      <div class="auth-row">
+        <span class="auth-key">DOT Number</span>
+        <span class="auth-val" style="color:var(--yellow)">4543858</span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Operating Status</span>
+        <span class="auth-val"><span class="badge-active">Active</span></span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Authority Since</span>
+        <span class="auth-val">March 4, 2026</span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Safety Rating</span>
+        <span class="auth-val" style="color:var(--gray)">Not Rated</span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Crashes (24 mo)</span>
+        <span class="auth-val" style="color:var(--green)">None Reported</span>
+      </div>
+    </div>
+    <p style="color:var(--gray); font-size:0.82rem; margin-top:1rem; line-height:1.7;">
+      Verify this carrier's information directly with official FMCSA systems via the links below.
+    </p>
+    <div class="fmcsa-links" style="margin-top:1rem;">
+      <a href="https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=4543858" target="_blank">View on SAFER →</a>
+      <a href="https://ai.fmcsa.dot.gov/SMS/Carrier/4543858/Overview.aspx" target="_blank">SMS Safety Data →</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-label">MCS-150 Filing</div>
+    <h2 class="section-title">FILINGS</h2>
+    <div class="auth-card">
+      <div class="auth-row">
+        <span class="auth-key">MCS-150 Update</span>
+        <span class="auth-val">20260304</span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Active Authority</span>
+        <span class="auth-val"><span class="badge-active">Confirmed</span></span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Inspection History</span>
+        <span class="auth-val" style="color:var(--gray)">Limited</span>
+      </div>
+      <div class="auth-row">
+        <span class="auth-key">Carrier Trust Score</span>
+        <span class="auth-val" style="color:var(--gray)">Limited History</span>
+      </div>
+    </div>
+    <p style="color:var(--gray); font-size:0.82rem; margin-top:1rem; line-height:1.7;">
+      Newly established authority — March 2026. Insufficient FMCSA history to generate a full trust score. Verify directly with official sources for insurance and licensing status.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div>
+    <div class="section-label">Reach Us</div>
+    <h2 class="section-title">CONTACT</h2>
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Physical Address</div>
+          <div class="contact-value">221 E Cara Ct<br>Tracy, CA 95391-8216</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:5103661660">(510) 366-1660</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:WHATTHETRUCKINC@GMAIL.COM">whatthetruckinc@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">👤</div>
+        <div>
+          <div class="contact-label">Company Officer</div>
+          <div class="contact-value">Syed Siddique Shahid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-label">Location</div>
+    <h2 class="section-title">TRACY, CA</h2>
+    <div class="map-placeholder">
+      <div class="map-pin">📌</div>
+      <div class="map-text">221 E Cara Ct<br>Tracy, CA 95391</div>
+      <a class="map-link" href="https://maps.google.com/?q=221+E+Cara+Ct+Tracy+CA+95391" target="_blank">Open in Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">WHAT THE<span> TRUCK INC</span></div>
+      <div class="footer-tagline">Active Carrier & Broker — Tracy, CA</div>
+    </div>
+    <div class="footer-meta">
+      <span>DOT# <strong>4543858</strong></span>
+      <span>Authority Since March 4, 2026</span>
+      <span>Tracy, CA 95391</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 What The Truck INC. All rights reserved.</span>
+    <div class="fmcsa-links">
+      <a href="https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=4543858" target="_blank">FMCSA SAFER</a>
+      <a href="mailto:WHATTHETRUCKINC@GMAIL.COM">Email Us</a>
+      <a href="tel:5103661660">Call Us</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
